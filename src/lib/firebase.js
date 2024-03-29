@@ -21,9 +21,9 @@ const firebase = initializeApp(config);
 
 //Initalize services
 const db = getFirestore(firebase);
-// const auth = getAuth();
+const auth = getAuth(firebase);
 
 //here we call seed file only ONCE
 // seedDatabase(firebase);
 
-export { firebase, FieldValue, db };
+export { firebase, FieldValue, db, auth };
