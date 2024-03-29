@@ -9,6 +9,7 @@ import * as ROUTES from "./constants/routes";
 
 const Login = lazy(() => import("./pages/login"));
 const SignUp = lazy(() => import("./pages/sign-up"));
+const NotFound = lazy(() => import("./pages/not-found"));
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -26,6 +27,14 @@ const router = createBrowserRouter(
 				element={
 					<Suspense fallback={<div>Loading...</div>}>
 						<SignUp />
+					</Suspense>
+				}
+			/>
+			<Route
+				path="*"
+				element={
+					<Suspense fallback={<div>Loading...</div>}>
+						<NotFound />
 					</Suspense>
 				}
 			/>
