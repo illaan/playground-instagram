@@ -15,6 +15,10 @@ export default {
 				red: {
 					primary: "#ed4956",
 				},
+				black: {
+					light: "#262626",
+					faded: "#00000059",
+				},
 			},
 		},
 	},

@@ -6,9 +6,12 @@ import {
 	Route,
 } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
+import UserContext from "./context/user";
+import useAuthListener from "./hooks/use-auth-listener";
 
 const Login = lazy(() => import("./pages/login"));
 const SignUp = lazy(() => import("./pages/sign-up"));
+const Dashboard = lazy(() => import("./pages/dashboard"));
 const NotFound = lazy(() => import("./pages/not-found"));
 
 const router = createBrowserRouter(
@@ -31,6 +34,14 @@ const router = createBrowserRouter(
 				}
 			/>
 			<Route
+				path={ROUTES.DASHBOARD}
+				element={
+					<Suspense fallback={<div>Loading...</div>}>
+						<Dashboard />
+					</Suspense>
+				}
+			/>
+			<Route
 				path="*"
 				element={
 					<Suspense fallback={<div>Loading...</div>}>
@@ -43,7 +54,12 @@ const router = createBrowserRouter(
 );
 
 function App() {
-	return <RouterProvider router={router} />;
+	const { user } = useAuthListener();
+	return (
+		<UserContext.Provider value={{ user }}>
+			<RouterProvider router={router} />
+		</UserContext.Provider>
+	);
 }
 
 export default App;
