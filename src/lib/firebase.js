@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, FieldValue } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import "firebase/auth";
 import { getAuth } from "firebase/auth";
 
@@ -26,4 +26,4 @@ const auth = getAuth(firebase);
 //here we call seed file only ONCE
 // seedDatabase(firebase);
 
-export { firebase, FieldValue, db, auth };
+export { firebase, db, auth };

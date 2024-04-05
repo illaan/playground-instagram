@@ -20,7 +20,7 @@ function LogIn() {
 			await signInWithEmailAndPassword(auth, emailAddress, password);
 			navigate(ROUTES.DASHBOARD);
 		} catch (error) {
-			console.log(error);
+			// console.log(error);
 			setEmailAdress("");
 			setPassword("");
 			setError(error.message);
