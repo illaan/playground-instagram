@@ -3,6 +3,9 @@ export default {
 	content: ["./src/**/*.{html,js,jsx}"],
 	theme: {
 		extend: {
+			fill: (theme) => ({
+				red: theme("colors.red.primary"),
+			}),
 			colors: {
 				blue: {
 					medium: "#005c98",
