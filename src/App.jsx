@@ -8,6 +8,8 @@ import {
 import * as ROUTES from "./constants/routes";
 import UserContext from "./context/user";
 import useAuthListener from "./hooks/use-auth-listener";
+import ProtectedRoute from "./helpers/protected-route";
+import IsLoggedIn from "./helpers/is-loggedin";
 
 const Login = lazy(() => import("./pages/login"));
 const SignUp = lazy(() => import("./pages/sign-up"));
@@ -20,25 +22,31 @@ const router = createBrowserRouter(
 			<Route
 				path={ROUTES.LOGIN}
 				element={
-					<Suspense fallback={<div>Loading...</div>}>
-						<Login />
-					</Suspense>
+					<IsLoggedIn>
+						<Suspense fallback={<div>Loading...</div>}>
+							<Login />
+						</Suspense>
+					</IsLoggedIn>
 				}
 			/>
 			<Route
 				path={ROUTES.SIGN_UP}
 				element={
-					<Suspense fallback={<div>Loading...</div>}>
-						<SignUp />
-					</Suspense>
+					<IsLoggedIn>
+						<Suspense fallback={<div>Loading...</div>}>
+							<SignUp />
+						</Suspense>
+					</IsLoggedIn>
 				}
 			/>
 			<Route
 				path={ROUTES.DASHBOARD}
 				element={
-					<Suspense fallback={<div>Loading...</div>}>
-						<Dashboard />
-					</Suspense>
+					<ProtectedRoute>
+						<Suspense fallback={<div>Loading...</div>}>
+							<Dashboard />
+						</Suspense>
+					</ProtectedRoute>
 				}
 			/>
 			<Route
