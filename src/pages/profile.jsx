@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getUserbyUsername } from "../services/firebase";
+import { getUserByUsername } from "../services/firebase";
 import * as ROUTES from "../constants/routes";
 import Header from "../components/header";
 import UserProfile from "../components/profile";
@@ -8,13 +8,14 @@ import UserProfile from "../components/profile";
 function Profile() {
 	const { username } = useParams();
 	const [user, setUser] = useState(null);
+
 	const navigate = useNavigate();
 
 	useEffect(() => {
 		async function checkUserExists() {
-			const [user] = await getUserbyUsername(username);
-			if (user?.userId) {
-				setUser(user);
+			const user = await getUserByUsername(username);
+			if (user.length > 0) {
+				setUser(user[0]);
 			} else {
 				navigate(ROUTES.NOT_FOUND);
 			}

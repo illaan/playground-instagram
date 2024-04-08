@@ -15,6 +15,7 @@ const Login = lazy(() => import("./pages/login"));
 const SignUp = lazy(() => import("./pages/sign-up"));
 const Dashboard = lazy(() => import("./pages/dashboard"));
 const NotFound = lazy(() => import("./pages/not-found"));
+const Profile = lazy(() => import("./pages/profile"));
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
@@ -47,6 +48,14 @@ const router = createBrowserRouter(
 							<Dashboard />
 						</Suspense>
 					</ProtectedRoute>
+				}
+			/>
+			<Route
+				path={ROUTES.PROFILE}
+				element={
+					<Suspense fallback={<div>Loading...</div>}>
+						<Profile />
+					</Suspense>
 				}
 			/>
 			<Route

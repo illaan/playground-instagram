@@ -94,3 +94,29 @@ export async function getPhotos(userId, following) {
 	);
 	return photosWithUserDetails;
 }
+
+export async function getUserByUsername(username) {
+	const q = query(collection(db, "users"), where("username", "==", username));
+
+	const result = await getDocs(q);
+
+	const user = result.docs.map((item) => ({
+		...item.data(),
+		docId: item.id,
+	}));
+	return user;
+}
+
+export async function getUserPhotosByUsername(username) {
+	const [user] = await getUserByUsername(username);
+	const q = query(collection(db, "photos"), where("userId", "==", user.userId));
+
+	const result = await getDocs(q);
+
+	const photos = result.docs.map((item) => ({
+		...item.data(),
+		docId: item.id,
+	}));
+
+	return photos;
+}
