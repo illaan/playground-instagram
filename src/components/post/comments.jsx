@@ -38,7 +38,7 @@ function Comments({ docId, comments: allComments, posted, commentInput }) {
 
 export default Comments;
 
-Comments.PropTypes = {
+Comments.propTypes = {
 	docId: PropTypes.string.isRequired,
 	comments: PropTypes.array.isRequired,
 	posted: PropTypes.number.isRequired,

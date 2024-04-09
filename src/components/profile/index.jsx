@@ -3,12 +3,13 @@ import Header from "./header";
 import Photos from "./photos";
 import { useEffect, useReducer } from "react";
 import { getUserPhotosByUsername } from "../../services/firebase";
+import "react-loading-skeleton/dist/skeleton.css";
 
 function UserProfile({ user }) {
 	const reducer = (state, newstate) => ({ ...state, ...newstate });
 	const initialState = {
 		profile: {},
-		photosCollection: [],
+		photosCollection: null,
 		followerCount: 0,
 	};
 	const [{ profile, photosCollection, followerCount }, dispatch] = useReducer(
@@ -24,11 +25,12 @@ function UserProfile({ user }) {
 			console.log(photos);
 			dispatch({
 				profile: user,
-				photosCollcetion: photos,
+				photosCollection: photos,
 				followerCount: user.followers.length,
 			});
 		}
 		getProfileInfoAndPhotos();
+		console.log(photosCollection);
 	}, [user.username]);
 	return (
 		<>

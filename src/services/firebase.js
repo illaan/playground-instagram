@@ -120,3 +120,42 @@ export async function getUserPhotosByUsername(username) {
 
 	return photos;
 }
+
+export async function isUserFollowingProfile(
+	loggedInUserUsername,
+	profileUserId
+) {
+	const q = query(
+		collection(db, "users"),
+		where("username", "==", loggedInUserUsername),
+		where("following", "array-contains", profileUserId)
+	);
+
+	const result = await getDocs(q);
+
+	const [response = {}] = result.docs.map((item) => ({
+		...item.data(),
+		docId: item.id,
+	}));
+
+	return response.userId;
+}
+
+export async function toggleFollow(
+	isFollowingProfile,
+	activeUserDocId,
+	profileDocId,
+	profileUserId,
+	followingUserId
+) {
+	await updateLoggedInUserFollowing(
+		activeUserDocId,
+		profileUserId,
+		isFollowingProfile
+	);
+	await updateFollowedUserFollowers(
+		profileDocId,
+		followingUserId,
+		isFollowingProfile
+	);
+}
