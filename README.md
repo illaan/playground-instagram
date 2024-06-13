@@ -1,8 +1,26 @@
-# React + Vite
+# Instagram Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+"Instagram" clone is app developed using HTML, Tailwindcss, JavaScript, React (custom hooks, useContext,
+ useState, useEffect, useRef), Firebase (Firestore/auth). 
 
-Currently, two official plugins are available:
+## Features
+App has multiple pages such as Sign up, Log in, Dashboard, Profile.. If the user attempts to sign in, their credentials are sent securely to Firebase Authentication for verification, and when a user signs up, FIrebase Authentication generates a unique identifier (UID) for the user and associates it with their registration details. Users are able to follow/unfollow people, like(unlike) posts and even leave comments. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Screenshots**
+
+
+
+## Installation
+
+### Prerequisites
+
+### Setup
+
+1.  **Clone the repository.**
+
+2.  **Navigate to the Projcet Directories**
+
+3.  **Install dependencies**
+
+4.  **Start the Servers**
