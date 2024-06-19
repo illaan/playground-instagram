@@ -10,22 +10,22 @@ App has multiple pages such as Sign up, Log in, Dashboard, Profile.. If the user
 **Screenshots**
 
 ## Sign In
-![Screenshot of my app](assets/screenshots/singIn.jpg "Screenshot of My App")
+![Screenshot of my app](/assets/screenshots/signIn.jpg "Screenshot of My App")
 
 ## Sign Up
-![Screenshot of my app](assets/screenshots/singUp.jpg "Screenshot of My App")
+![Screenshot of my app](/assets/screenshots/signUp.jpg "Screenshot of My App")
 
 ## Dashboard
-![Screenshot of my app](assets/screenshots/dashboard.jpg "Screenshot of My App")
+![Screenshot of my app](/assets/screenshots/dashboard.jpg "Screenshot of My App")
 
 ## Dashboard
-![Screenshot of my app](assets/screenshots/dashboard2.jpg "Screenshot of My App")
+![Screenshot of my app](/assets/screenshots/dashboard2.jpg "Screenshot of My App")
 
 ## User profile
-![Screenshot of my app](assets/screenshots/user-profile.jpg "Screenshot of My App")
+![Screenshot of my app](/assets/screenshots/user-profile.jpg "Screenshot of My App")
 
 ## Following profile
-![Screenshot of my app](assets/screenshots/following-profile.jpg "Screenshot of My App")
+![Screenshot of my app](/assets/screenshots/following-profile.jpg "Screenshot of My App")
 
 
 ## Installation
