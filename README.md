@@ -13,7 +13,7 @@ App has multiple pages such as Sign up, Log in, Dashboard, Profile.. If the user
 ![Screenshot of my app](../assets/signIn.jpg "Screenshot of My App")
 
 ## Sign Up
-![Screenshot of my app](..public/assets/signUp.jpg "Screenshot of My App")
+![Screenshot of my app](public/assets/signUp.jpg "Screenshot of My App")
 
 ## Dashboard
 ![Screenshot of my app](../assets/dashboard.jpg "Screenshot of My App")
