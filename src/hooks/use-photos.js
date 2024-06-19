@@ -13,8 +13,6 @@ function usePhotos() {
 			const [{ following }] = await getUserByUserId(user.uid);
 			let followedUserPhotos = [];
 
-			console.log(following);
-
 			if (following.length > 0) {
 				followedUserPhotos = await getPhotos(user.uid, following);
 			}

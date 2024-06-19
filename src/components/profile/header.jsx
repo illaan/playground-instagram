@@ -19,6 +19,9 @@ function Header({
 }) {
 	const { user } = useUser();
 	const [isFollowingProfile, setIsFollowingProfile] = useState(false);
+	const [followersOpen, setFollowersOpen] = useState(false);
+	const [followingOpen, setFollowingOpen] = useState(false);
+	console.log(following, "following");
 	const activeButtonFollow = user.username && user.username !== profileUsername;
 
 	const handleToggleFollow = async () => {
@@ -81,16 +84,28 @@ function Header({
 							<p className="mr-10">
 								<span className="font-bold">{photosCount}</span> photos
 							</p>
-							<p className="mr-10">
+							<button className="mr-10 cursor-pointer">
 								<span className="font-bold">{followerCount}</span>
 								{` `}
 								{followerCount === 1 ? `follower` : `followers`}
-							</p>
-							<p className="mr-10">
+							</button>
+							<button
+								onClick={() => setFollowingOpen(true)}
+								className="mr-10 cursor-pointer"
+							>
 								<span className="font-bold">{following?.length}</span> following
-							</p>
+							</button>
 						</>
 					)}
+					{followingOpen ? (
+						<div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center z-20">
+							<div className="relative bg-white z-30 w-5/12 p-20">
+								{following.map((item) => (
+									<div className="z-40">{item?.username}</div>
+								))}
+							</div>
+						</div>
+					) : null}
 				</div>
 				<div className="container mt-4">
 					<p className="font-medium">
