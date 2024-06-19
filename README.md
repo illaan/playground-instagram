@@ -35,8 +35,6 @@ App has multiple pages such as Sign up, Log in, Dashboard, Profile.. If the user
 
 ![Screenshot of my app](./src/assets/following-profile.jpg "Screenshot of My App")
 
-"Instagram" clone is app developed using HTML, Tailwindcss, JavaScript, React (custom hooks, useContext,
-useState, useEffect, useRef), Firebase (Firestore/auth).
 
 ## Features
 
